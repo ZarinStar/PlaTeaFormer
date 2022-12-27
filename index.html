@@ -1,7 +1,60 @@
 <html>
-<head>
-</head>
+	<head>
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+	</head>
 
-Welcome to the game! Use the arrow keys to jump (up arrow), and go left or right.
+	<body>
 
+	<canvas id="canvas"></canvas>
+
+		<h1> Welcome to the game! </h1>
+
+		<br>
+		<br>
+
+		<div id="game">
+		<!-- Javascript platform game -->
+		<script>
+
+		//game character
+		var player = {
+	        x: 200,
+	        y: 200,
+	        x_v: 0,
+	        y_v: 0,
+	        jump : true,
+	        height: 20,
+	        width: 20
+	        };
+
+	    //tea
+
+	    //green: #C9E3AC
+	    //white: #EAEFBD
+	    //black: TBD
+
+
+		//platform
+
+		function gameBackground(){
+	        ctx.fillStyle = "#E6D3F4";
+	        ctx.fillRect(0, 0, 600, 300); //width, height
+	    }
+
+	    function loop() {
+	        gameBackground();
+	    }
+
+	    canvas=document.getElementById("canvas");
+	    ctx=canvas.getContext("2d");
+	    ctx.canvas.height = 300;
+	    ctx.canvas.width = 600;
+	    loop();
+
+		</script>
+		</div>
+
+		Use the arrow keys to jump (up arrow), and go left or right.
+
+	</body>
 </html>

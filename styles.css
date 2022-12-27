@@ -1,0 +1,12 @@
+#game {
+    width: 100%;
+    margin: 0 auto;
+    vertical-align: center;
+	text-align: center;
+}
+
+canvas 
+{ 
+	margin: 0 auto; 
+	display: block;
+}
