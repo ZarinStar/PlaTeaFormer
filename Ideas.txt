@@ -1,0 +1,11 @@
+Ideas
+
+> Enemy: water (tea gets weaker)
+> Enemy: snowflake (tea gets cold)
+
+> Powerup: sugar (fast/invicible)
+> Powerup: milk (???)
+
+> Black tea: Can withstand the enemies the most
+> Green tea: ??? 
+> White tea: Stays in the air the longest
