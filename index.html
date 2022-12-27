@@ -7,14 +7,26 @@
 
 	<canvas id="canvas"></canvas>
 
+		<div id="rules">
 		<h1> Welcome to the game! </h1>
 
+
+		Use the arrow keys to jump (up arrow), and go left or right.
+
+		</div>
 		<br>
 		<br>
 
 		<div id="game">
 		<!-- Javascript platform game -->
 		<script>
+
+		function randomIntFromInterval(min, max) { // min and max included 
+			return Math.floor(Math.random() * (max - min + 1) + min)
+		}
+
+		var maxX = 700;
+		var maxY = 300;
 
 		//game character
 		var player = {
@@ -35,26 +47,49 @@
 
 
 		//platform
+	    var numOfPlatforms = randomIntFromInterval(3,10);
+	    var platforms = [];
+
+	    function createPlatforms(){
+	        for(i = 0; i < numOfPlatforms; i++) {
+	            platforms.push(
+	                {
+	                x: randomIntFromInterval(0,maxX),
+	                y: randomIntFromInterval(0,maxY),
+	                width: 200,
+	                height: 30
+	                }
+	            );
+	        }
+        }
+
+        function gamePlatforms(){
+	        ctx.fillStyle = "#68683B";
+	        for(i = 0; i < numOfPlatforms; i++) {
+	            ctx.fillRect(platforms[i].x, platforms[i].y, platforms[i].width, platforms[i].height);
+	        }	    
+	    }
 
 		function gameBackground(){
 	        ctx.fillStyle = "#E6D3F4";
-	        ctx.fillRect(0, 0, 600, 300); //width, height
+	        ctx.fillRect(0, 0, maxX, maxY); //width, height
 	    }
 
 	    function loop() {
 	        gameBackground();
+	        gamePlatforms();
 	    }
 
 	    canvas=document.getElementById("canvas");
 	    ctx=canvas.getContext("2d");
-	    ctx.canvas.height = 300;
-	    ctx.canvas.width = 600;
+	    ctx.canvas.height = maxY;
+	    ctx.canvas.width = maxX;
+	    createPlatforms();
 	    loop();
 
 		</script>
 		</div>
 
-		Use the arrow keys to jump (up arrow), and go left or right.
 
 	</body>
 </html>
