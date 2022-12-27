@@ -30,6 +30,14 @@
 	    var platformWidth = 200;
 	    var platformHeight = 30;
 
+	    // The status of the arrow keys    
+	    var keys = {
+	        right: false,
+	        left: false,
+	        up: false,
+	        };
+	    var friction = 0.7;
+
 		//game character
 		var player = {
 	        x: platformWidth/2,
@@ -92,7 +100,37 @@
 	        ctx.fillRect(0, 0, maxX, maxY); //width, height
 	    }
 
+	    // This function is called when one of the arrow keys is pressed
+	    function keydown(e) {
+	        // 37 is the code for thr left arrow key
+	        if(e.keyCode == 37) {
+	            keys.left = true;
+	        }
+	        // 39 is the code for the right arrow key
+	        if(e.keyCode == 39) {
+	            keys.right = true;
+	        }
+	    }
+	    // This function is called when the key is released
+	    function keyup(e) {
+	        if(e.keyCode == 37) {
+	            keys.left = false;
+	        }
+	        if(e.keyCode == 39) {
+	            keys.right = false;
+	        }
+	    }
+
 	    function loop() {
+	    	// If the left key is pressed, move the player to the left
+	        if(keys.left) {
+	            player.x+= -2.5;
+	        }
+	         // If the right key is pressed, move the player to the right
+	        if(keys.right) {
+	            player.x  += 2.5;
+	        }
+
 	        gameBackground();
 	        gamePlatforms();
 	        gamePlayer();
@@ -103,7 +141,11 @@
 	    ctx.canvas.height = maxY;
 	    ctx.canvas.width = maxX;
 	    createPlatforms();
-	    loop();
+
+	    document.addEventListener("keydown",keydown);
+    	document.addEventListener("keyup",keyup);
+	    // Calling loop every 15 milliseconds to update the frame
+	    setInterval(loop,15);
 
 		</script>
 		</div>
