@@ -6,6 +6,9 @@ Ideas
 > Powerup: sugar (fast/invicible)
 > Powerup: milk (???)
 
-> Black tea: Can withstand the enemies the most
-> Green tea: ??? 
-> White tea: Stays in the air the longest
+> Defense: Enemies have less effect on tea.
+
+> Black tea: Can withstand the enemies the most, lower jump.
+> Green tea: In the middle. Normal defense, normal jump.
+> White tea: Stays in the air the longest, lower defense.
+> Herbal tea: Slow motion.
