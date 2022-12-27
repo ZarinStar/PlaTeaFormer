@@ -1,2 +1,3 @@
-# AudioAnalyzer
-To analyze how long I have been speaking
+# PlaTeaFormer
+
+A simple platform with tea!
