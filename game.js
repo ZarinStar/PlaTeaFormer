@@ -35,6 +35,21 @@ function gamePlayer(){
     ctx.fillRect((player.x)-playerWidth, (player.y)-playerHeight, player.width, player.height);
 }
 
+// enemies
+var waterEnemy = {
+    x: maxX/2,
+    y: maxY/2,
+    x_v: 0,
+    y_v: 0,
+    height: playerHeight,
+    width: playerWidth
+}
+
+function gameWaterE(){
+    ctx.fillStyle = "#D3F4F4";
+    ctx.fillRect((waterEnemy.x)-playerWidth, (waterEnemy.y)-playerHeight, waterEnemy.width, waterEnemy.height);
+}
+
 //tea
 
 //green: #C9E3AC
@@ -140,7 +155,7 @@ function loop() {
     player.y += player.y_v;
     player.x += player.x_v;
 
-    // A simple code that checks for collions with the platform
+    // A simple code that checks for collision with the platform
     let i = -1;
     for(j = 0; j < numOfPlatforms; j++)
     {
@@ -161,6 +176,7 @@ function loop() {
     gameBackground();
     gamePlatforms();
     gamePlayer();
+    gameWaterE();
 }
 
 canvas=document.getElementById("canvas");
